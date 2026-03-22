@@ -320,6 +320,9 @@ export default function Portfolio() {
           }
           .hero-number { display: none; }
           .projects-grid { grid-template-columns: 1fr !important; }
+          .about-grid { grid-template-columns: 1fr !important; }
+          .about-stats-grid { grid-template-columns: 1fr 1fr !important; }
+          p, li { font-size: 0.88rem !important; line-height: 1.7 !important; word-break: normal !important; overflow-wrap: break-word !important; }
         }
 
         @media (min-width: 769px) {
@@ -377,6 +380,18 @@ export default function Portfolio() {
           color: var(--accent);
           line-height: 1;
         }
+
+        @media (max-width: 768px) {
+          .about-grid {
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+          }
+          .about-grid p {
+            font-size: 0.88rem !important;
+            overflow-wrap: break-word !important;
+            line-height: 1.75 !important;
+          }
+        }
       `}</style>
 
       {/* Cursor dot */}
@@ -415,7 +430,7 @@ export default function Portfolio() {
             onMouseLeave={e => e.currentTarget.style.color = theme.textMuted}>
             <Github size={18} />
           </a>
-          <a href="https://www.linkedin.com/in/ajay-hochumin" target="_blank" rel="noopener noreferrer" style={{ color: theme.textMuted, display: "flex", transition: "color 0.2s" }}
+          <a href="https://www.linkedin.com/in/ajayhochumin" target="_blank" rel="noopener noreferrer" style={{ color: theme.textMuted, display: "flex", transition: "color 0.2s" }}
             onMouseEnter={e => e.currentTarget.style.color = theme.accent}
             onMouseLeave={e => e.currentTarget.style.color = theme.textMuted}>
             <Linkedin size={18} />
@@ -496,7 +511,7 @@ export default function Portfolio() {
           </h2>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "start" }} data-aos="fade-up" data-aos-delay="100">
+        <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem", alignItems: "start" }} data-aos="fade-up" data-aos-delay="100">
           <div>
             <p style={{ color: theme.textMuted, lineHeight: 1.8, marginBottom: "1rem", fontSize: "0.95rem" }}>
               I'm <strong style={{ color: theme.text }}>H. Ajay</strong>, a Frontend Developer with 2.2 years of hands-on experience building production React applications. I specialize in React.js, MUI v5, and REST API integration — and have shipped real features for DENSO, a leading automotive client.
@@ -509,7 +524,7 @@ export default function Portfolio() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+          <div className="about-stats-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
             {[
               { number: "2.2+", label: "Years Experience" },
               { number: "5+", label: "Projects Built" },
@@ -661,7 +676,7 @@ export default function Portfolio() {
           {[
             { icon: <Mail size={18} />, label: "Email", value: "ajayhochumin00@gmail.com", href: "mailto:ajayhochumin00@gmail.com" },
             { icon: <Phone size={18} />, label: "Mobile", value: "+91 63802 98751", href: "tel:+916380298751" },
-            { icon: <Linkedin size={18} />, label: "LinkedIn", value: "linkedin.com/in/ajay-hochumin", href: "https://www.linkedin.com/in/ajay-hochumin" },
+            { icon: <Linkedin size={18} />, label: "LinkedIn", value: "linkedin.com/in/ajayhochumin", href: "https://www.linkedin.com/in/ajayhochumin" },
             { icon: <Github size={18} />, label: "GitHub", value: "github.com/H-AJAY", href: "https://github.com/H-AJAY" },
           ].map((item, i) => (
             <a key={i} href={item.href} target={item.href.startsWith("http") ? "_blank" : "_self"} rel="noopener noreferrer"
